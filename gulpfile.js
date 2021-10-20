@@ -40,6 +40,7 @@ function watchTask(){
     watch('./src/api/**', apiTask);
     watch('./src/css/**', sassTask);
     watch('./src/js/**', jsTask);
+    watch('./src/css/**', cssTask);
 }
 
 //同步静态资源

@@ -33,7 +33,7 @@ define(['jquery'], function(){
     // aside响应式布局控制
     function responseCtrl(){
 
-        console.log('response');
+        // console.log('response');
         // 页面宽度>=1000px
         // console.log($('body').width());
         if ($('body').width() >= 1000) {
@@ -51,7 +51,7 @@ define(['jquery'], function(){
         }
         else{
             $('main>header').css({
-                'display':'block'
+                'display':'flex'
             });
 
             $('#aside').css({

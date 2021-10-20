@@ -1,66 +1,79 @@
-
 *{padding: 0;margin: 0;}
 #banner{
-    border: 1px solid #ccc;
-    margin: 30px auto;
-    padding: 30px 0 30px 0;
+    /* border: 1px solid #ccc; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
+    height: 497.6px;
+    /* background-color: greenyellow; */
     position: relative;
     overflow: hidden;
 }
-.box2{
+#banner:hover>.box2{box-shadow: 0 0 15px #333;}
+#banner>.box2{
     width: 100%;
-    height: 300px;
+    height: 100%;
     background-color: #f3f3f3;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
+    transition: .4s;
 }
-.box3{
+#banner .box3{
     /* background-color: aqua; */
     position: relative;
     box-sizing: border-box;
     display: flex;
 }
-.box3>.shadowDiv{
+#banner .box3>.shadowDiv{
     width: 100%;height: 100%;
     background-color: black;
     z-index: 1;
     opacity: 0.7;
     position: absolute;
 }
-.imgDiv{
-    width: 90px;height: 120px;
-    background-color: gold;
+#banner .imgDiv{
+    width: 70px;height: 98.79px;
+    /* background-color: gold; */
     position: relative;
-    left: 10px;top: -15px;
+    left: 20px;top: -15px;
     z-index: 5;
 }
-.box4>h1{
-    line-height: 1.5;
-    font-size: 25px;
-    font-weight: normal;
+#banner .imgDiv>img{
+    width: 70px;height: 98.79px;
 }
-.box4>p{
+#banner .box4>h1{
+    line-height: 1.5;
+    font-size: 40px;
+    font-weight: normal;
+    margin: 10px;
+    color: #fff;
+}
+#banner .box4>p{
     font-size: 16px;
     line-height: 1.5;
+    color: #fff;
 }
-.box4{
+#banner .box4>a{
+    font-size: 16px;
+    line-height: 2;
+    color: #2CA4CB;
+}
+#banner .box4{
     /* background-color: purple; */
-    margin-left: 20px;
+    margin-left: 40px;
     flex: 1;
     box-sizing: border-box;
     z-index: 5;
     color: #fff;
+    padding-bottom: 30px;
 }
 #banner>.buttonArea{
     width: 100%;
-    height: 40px;
+    height: 60px;
     /* background-color: plum; */
     display: flex;
     align-items: center;
@@ -73,15 +86,20 @@
     gap: 10px;
 }
 #banner>.buttonArea>ul>li{
-    width: 15px;height: 15px;
-    background-color: gold;
+    width: 8px;height: 8px;
+    /* background-color: gold; */
+    border: 1px solid #7B8088;
+    box-sizing: border-box;
     border-radius: 50%;
+    transition: .4s;
 }
 #banner>.buttonArea>ul>li:hover{
-    background-color: pink;
+    background-color: #787D85;
 }
 #banner>.buttonArea>ul>li.active{
-    background-color: purple;
+    transform: scale(1.5);
+    border: none;
+    background-color: #F56C2D;
 }
 #banner:hover>.left,#banner:hover>.right{display: block;}
 #banner>.left{
@@ -117,7 +135,7 @@
 
 #banner>.box2>.bannerBg{
     width: 300%;
-    height: 300px;
+    height: 100%;
     background-color: red;
     position: absolute;
     top: 0;left: 0;

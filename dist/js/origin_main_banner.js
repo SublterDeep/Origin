@@ -99,6 +99,7 @@ define(['jquery'], function(){
     function checkDirection(num) {
         // 1左 0右
         let dir=2;
+        $('#banner .imgDiv>img').fadeOut();
         // 向左
         if(num<nowPage){
             console.log('向左');
@@ -125,6 +126,8 @@ define(['jquery'], function(){
                 $bannerBg.css('left',cenPos+'px');
                 isAnimating=false;
                 nowPage=num;
+                document.querySelector('#banner .imgDiv>img').src='/static/img/banner/'+ (nowPage+1) +'.jpg';
+                $('#banner .imgDiv>img').fadeIn();
                 changeItem(num);
                 // console.log(num);
             });
@@ -139,18 +142,21 @@ define(['jquery'], function(){
                 $bannerBg.css('left',cenPos+'px');
                 isAnimating=false;
                 nowPage=num;
+                document.querySelector('#banner .imgDiv>img').src='/static/img/banner/'+ (nowPage+1) +'.jpg';
+                $('#banner .imgDiv>img').fadeIn();
                 changeItem(num);
                 // console.log(num);
             });
         }
     }
 
+    // 自动轮播
     function setAutoplay() {
         setInterval(() => {
             if (isPlaying) {
                 checkDirection(nowPage+1);
             }
-        }, 2000);
+        }, 3000);
     }
 
     // 调整图片样式
