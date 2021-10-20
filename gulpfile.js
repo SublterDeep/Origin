@@ -26,7 +26,7 @@ function webTask(){
     return src('./dist')
             .pipe(webserver({
                 livereload: true,     
-                open: './views/index.html', 
+                open: './views/origin.html', 
                 port: 3000,
                 host: 'localhost'
             }));
@@ -39,6 +39,7 @@ function watchTask(){
     watch('./src/lib/**', libTask);
     watch('./src/api/**', apiTask);
     watch('./src/css/**', sassTask);
+    watch('./src/js/**', jsTask);
 }
 
 //同步静态资源
@@ -59,6 +60,12 @@ function apiTask(){
             .pipe(dest('./dist/api'));
 }
 
+//同步js
+function jsTask(){
+    return src('./src/js/**')
+            .pipe(dest('./dist/js'));
+}
+
 //sass的任务
 function sassTask(){
     return src('./src/css/*.scss')
@@ -66,7 +73,13 @@ function sassTask(){
             .pipe(dest('./dist/css'));
 }
 
+//同步css
+function cssTask() {
+    return src('./src/css/**')
+            .pipe(dest('./dist/css'));
+}
+
 
 module.exports = {
-    dev: series(cleanTask, parallel(fileIncludeTask, staticTask, libTask, apiTask, sassTask), parallel(webTask, watchTask) )
+    dev: series(cleanTask, parallel(fileIncludeTask, staticTask, libTask, apiTask, sassTask, jsTask, cssTask), parallel(webTask, watchTask) )
 };

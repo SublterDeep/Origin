@@ -1,0 +1,38 @@
+*{padding: 0;margin: 0;}
+html{height: 100%;}
+body{
+    display: flex;
+    height: 100%;
+}
+#aside{
+    width: 200px;
+    height: 100%;
+    background-color: gold;
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+main{
+    flex: 1;
+    background-color: darkcyan;
+    overflow: auto;
+}
+main>header{
+    width: 100%;
+    height: 100px;
+    background-color: aqua;
+    display: none;
+}
+main>.box1{
+    width: 90%;
+    height: 3000px;
+    background-color: red;
+}
+.coverShield{
+    width: 100%;height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    display: none;
+    position: fixed;
+    z-index: 5;
+}
