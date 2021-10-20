@@ -26,7 +26,7 @@
     top: 0;left: 0;
 }
 .head>.box2:hover{
-    box-shadow: 0 0 15px #ccc;
+    box-shadow: 0 0 15px #333;
 }
 .head>.box2{
     /* width: 500px;
@@ -40,6 +40,7 @@
     background-size: cover !important;
     background-position: center !important;
     position: relative;
+    box-shadow: 0 0 5px #333;
 }
 .head .box3{
     /* background-color: black; */
@@ -72,4 +73,71 @@
     flex: 1;
     box-sizing: border-box;
     z-index: 10;
+}
+
+.wide{
+    height: 360px;
+    border: 1px solid #ccc;
+    padding: 0 43px 30px 43px;
+    margin-top: 30px;
+}
+.wide>.box2{
+    width: 100%;height: 100%;
+    background-color: red;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    box-shadow: 0 0 5px #333;
+    transition: .4s;
+    position: relative;
+}
+.wide>.box2:hover{
+    box-shadow: 0 0 15px #333;
+}
+.wide>.box2>.box3{
+    width: 100%;
+    /* height: 165.6px; */
+    padding-bottom: 15px;
+    /* background-color: yellow; */
+    position: absolute;
+    bottom: 0;left: 0;
+}
+.wide>.box2>.box3>.cover{
+    width: 100%;height: 100%;
+    background-color: black;
+    opacity: .6;
+    position: absolute;
+    top: 0;left: 0;
+    z-index: 4;
+}
+.wide>.box2>.box3>.box4{
+    /* background-color: purple; */
+    margin-left: 20px;
+    flex: 1;
+    box-sizing: border-box;
+    z-index: 10;
+    position: relative;
+}
+.wide>.box2>.box3>.box4>a{
+    display: block;
+    margin-top: 20px;
+}
+.wide>.box2>.box3>.box4>a>img{
+    height: 30px;
+}
+.wide>.box2>.box3>.box4>h1{
+    line-height: 1.5;
+    font-size: 25px;
+    font-weight: normal;
+    color: #fff;
+}
+.wide>.box2>.box3>.box4>p{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+.wide>.box2>.box3>.box4>span{
+    color: #2AC4F5;
+    display: block;
+    margin-top: 5px;
 }
