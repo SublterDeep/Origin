@@ -7,16 +7,16 @@ requirejs.config({
 
 define(['jquery'], function(){
 
-    let containUl=$('.itemList>ul');
-    let widthLi=$('.itemList>ul>li').width()+10; // li的宽(加上了间距)
-    $('.itemList').width( $('main').width()*0.9+'px' );
-    let lastNum=Math.round($('.itemList').width()/widthLi); // ul列表当前能显示的li数量
-    let lis=document.querySelectorAll('.itemList>ul>li'); // 所有li
+    let containUl=$('main>.itemList>ul');
+    let widthLi=$('main>.itemList>ul>li').width()+27; // li的宽(加上了间距)
+    $('main>.itemList').width( $('main').width()*0.9+'px' );
+    let lastNum=Math.round($('main>.itemList').width()/widthLi); // ul列表当前能显示的li数量
+    let lis=document.querySelectorAll('main>.itemList>ul>li'); // 所有li
     let lis_display=[]; // 按当前ul能够显示的li数量分小数组
     let pageCount; // 总页数
     let nowPage=0; // 当前页数
-    let leftBtn=document.querySelector('.itemList>.left');
-    let rightBtn=document.querySelector('.itemList>.right');
+    let leftBtn=document.querySelector('main>.itemList>.left');
+    let rightBtn=document.querySelector('main>.itemList>.right');
 
     // 初始化
     containUl.width( lis.length*widthLi+'px' );
@@ -26,11 +26,11 @@ define(['jquery'], function(){
     // 页面大小改变时
     function sizeChange(){
         // console.log(1);
-        $('.itemList').width( $('main').width()*0.9+'px' ); // 改变box1的宽度
+        $('main>.itemList').width( $('main').width()*0.9+'px' ); // 改变box1的宽度
 
-        // console.log('能放下几个宽的Li元素 : ' + Math.round($('.itemList').width()/widthLi) );
-        if( lastNum!==Math.round($('.itemList').width()/widthLi) ){
-            lastNum=Math.round($('.itemList').width()/widthLi);
+        // console.log('能放下几个宽的Li元素 : ' + Math.round($('main>.itemList').width()/widthLi) );
+        if( lastNum!==Math.round($('main>.itemList').width()/widthLi) ){
+            lastNum=Math.round($('main>.itemList').width()/widthLi);
             // console.log('列表容纳项目数量发生了变化 ! 现在列表里边的数目是 : '+lastNum);
             changeDisplayArray(lastNum);
             initButtons(pageCount);
@@ -71,7 +71,7 @@ define(['jquery'], function(){
 
     // 初始化按钮
     function initButtons(num) {
-        let section_ul=document.querySelector('.itemList>section>ul')
+        let section_ul=document.querySelector('main>.itemList>section>ul')
         section_ul.innerHTML='';
         // 新建li元素并添加进ul列表
         for(let i=0;i<num;i++){
@@ -104,7 +104,7 @@ define(['jquery'], function(){
         }
         // 检测并拦截最后一页
         if(index===pageCount-1){
-            leftSpace=containUl.width()-$('.itemList').width()-10;
+            leftSpace=containUl.width()-$('main>.itemList').width()-10;
         }
         containUl.animate({
             left:-leftSpace+'px'
@@ -149,8 +149,8 @@ define(['jquery'], function(){
 
     // 设置按钮激活状态
     function setButtonStatus(index) {
-        $('.itemList>section>ul>li').removeClass();
-        $('.itemList>section>ul>li').eq(index).addClass('active');
+        $('main>.itemList>section>ul>li').removeClass();
+        $('main>.itemList>section>ul>li').eq(index).addClass('active');
     }
     
     return {sizeChange};
