@@ -27,12 +27,54 @@ main>header{
     justify-content: space-between;
     box-sizing: border-box;
     padding: 0 20px;
+    position: relative;
+}
+main>header>p{
+    position: relative;
+    width: 50px;
+    text-align: center;
+    line-height: 62px;
+    /* background-color: red; */
+    z-index: 99;
+}
+main>header>p:first-child{cursor: pointer;}
+main>header>.searchDiv{
+    width: 30px;height: 45px;
+    position: absolute;
+    right: 30px;
+    top: 0;bottom: 0;margin: auto;
+    /* background-color: #f60; */
+    display: none;
+}
+main>header>.searchDiv>input{
+    /* display: none; */
+    position: absolute;
+    right: 5px;
+    top: 0;bottom: 0;
+    margin: auto;
+    outline: none;
+    width: 98%;height: 98%;
+    border-radius: 22.5px;
+}
+main>header>.searchDiv>.searchD{
+    width: 45px;height: 45px;
+    /* background-color: red; */
+    position: absolute;
+    left: 0;
+    top: 0;bottom: 0;
+    margin: auto;
+    z-index: 99;
+    text-align: center;
+    line-height: 45px;
+    display: none;
 }
 main>header>.logo{
     display: flex;
     /* background-color: yellow; */
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 99;
 }
 main>header>.logo>img{
     width: 30px;height: 29.6px;
@@ -49,6 +91,7 @@ main>header>.logo>h1{font-weight: bolder;}
 }
 #aside>.listHover{transition: .4s;}
 #aside>.listHover>span{transition: .4s;}
+#aside>.listHover>span:last-child{transition: .4s;transform: scaleX(0.6);font-weight: bold;}
 #aside>.listHover:hover{
     background: #3A434C;
 }
@@ -76,7 +119,29 @@ main>header>.logo>h1{font-weight: bolder;}
 /* search */
 #search{
     height: 60px;
-    background-color: red;
+    /* background-color: red; */
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+#search>input{
+    display: block;
+    width: 250px;height: 45px;
+    border-radius: 22.5px;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 40px;
+    font-size: 14px;
+    padding-top: 5px;
+    color: #000;
+}
+#search>.sizeBigMirror{
+    width: 45px;height: 45px;
+    /* background-color: red; */
+    position: absolute;
+    top: 0;left: 15px;
+    text-align: center;
+    line-height: 45px;
 }
 
 
